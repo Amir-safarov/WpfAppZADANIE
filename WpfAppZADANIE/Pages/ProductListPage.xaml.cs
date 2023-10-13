@@ -31,12 +31,5 @@ namespace WpfAppZADANIE.Pages
                 ProductWrap.Children.Add(new ProductUserControl(item));
             }
         }
-        private void Refresh()
-        {
-
-            IEnumerable<Product> productList = App.DDBB.Product;
-            ProductWrap.Children.Clear();
-           
-        }
     }
 }
