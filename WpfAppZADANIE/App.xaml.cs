@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfAppZADANIE.Comp;
 
 namespace WpfAppZADANIE
 {
@@ -13,5 +14,6 @@ namespace WpfAppZADANIE
     /// </summary>
     public partial class App : Application
     {
+        HardwareShop_SAFEntities DDBB = new HardwareShop_SAFEntities();
     }
 }

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAppZADANIE.Pages;
+using WpfAppZADANIE.Comps;
 
 namespace WpfAppZADANIE
 {
@@ -23,6 +25,7 @@ namespace WpfAppZADANIE
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new Auth());
         }
     }
 }
