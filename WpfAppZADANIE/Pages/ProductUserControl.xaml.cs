@@ -25,9 +25,10 @@ namespace WpfAppZADANIE.Pages
         {
             InitializeComponent();
             SaleTB.Text = product.Discount.ToString()+ " %";
-            ProductDescriptionTB.Text = product.Description;
+            ProductDescriptionTB.Text = product.GetDescription;
             ReviewTB.Text = "1";
-            ProductPriceTB.Text = product.Cost.ToString();
+            ProductPriceTB.Text = product.GetRelevancePrice;
+            OldProductPriceTB.Text = product.GetOldPrice;
         }
     }
 }
