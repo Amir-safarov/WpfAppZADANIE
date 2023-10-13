@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAppZADANIE.Comp;
 
 namespace WpfAppZADANIE.Pages
 {
@@ -23,16 +24,19 @@ namespace WpfAppZADANIE.Pages
         public ProductListPage()
         {
             InitializeComponent();
+            IEnumerable<Product> productList = App.DDBB.Product;
+
+            foreach (var item in productList)
+            {
+                ProductWrap.Children.Add(new ProductUserControl(item));
+            }
         }
         private void Refresh()
         {
-            IEnumerable<Service> servicesSortList = App.negrDB.Service;
-            
-            ServiceWrap.Children.Clear();
-            foreach (var item in servicesSortList)
-            {
-                ServiceWrap.Children.Add(new ServiceUserControl(item));
-            }
+
+            IEnumerable<Product> productList = App.DDBB.Product;
+            ProductWrap.Children.Clear();
+           
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAppZADANIE.Comp;
 
 namespace WpfAppZADANIE.Pages
 {
@@ -20,9 +21,13 @@ namespace WpfAppZADANIE.Pages
     /// </summary>
     public partial class ProductUserControl : UserControl
     {
-        public ProductUserControl()
+        public ProductUserControl(Product product)
         {
             InitializeComponent();
+            SaleTB.Text = product.Discount.ToString()+ " %";
+            ProductDescriptionTB.Text = product.Description;
+            ReviewTB.Text = "1";
+            ProductPriceTB.Text = product.Cost.ToString();
         }
     }
 }

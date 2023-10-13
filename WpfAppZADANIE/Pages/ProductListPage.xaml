@@ -9,7 +9,7 @@
       Title="ProductListPage">
     <Grid>
         <ScrollViewer HorizontalScrollBarVisibility="Disabled">
-            <WrapPanel  Name ="ServiceWrap"></WrapPanel>
+            <WrapPanel  Name ="ProductWrap"></WrapPanel>
         </ScrollViewer>
     </Grid>
 </Page>

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfAppZADANIE.Pages;
-using WpfAppZADANIE.Comps;
+using WpfAppZADANIE.Comp;
 
 namespace WpfAppZADANIE
 {
@@ -25,7 +25,7 @@ namespace WpfAppZADANIE
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new Auth());
+            MainFrame.Navigate(new ProductListPage());
         }
     }
 }
