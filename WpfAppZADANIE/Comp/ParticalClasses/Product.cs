@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace WpfAppZADANIE.Comp
 {
@@ -13,9 +14,9 @@ namespace WpfAppZADANIE.Comp
             get
             {
                 if (Discount != 0)
-                    return $"{Cost - (Cost * ((decimal)Discount/100))}P";
+                    return $"{Cost - (Cost * ((decimal)Discount/100)):0}P";
                 else
-                    return $"{Cost}P";
+                    return $"{Cost:0}P";
             }
         }
         
@@ -23,10 +24,19 @@ namespace WpfAppZADANIE.Comp
         {
             get
             {
-                if (Discount != 0)
+                if (Discount == 0)
                     return $"";
                 else
-                    return $"{Cost}P";
+                    return $"{Cost:0}P";
+            }
+        }
+        public string GetSale
+        {
+            get
+            {
+                if (Discount == 0)
+                    return $"";
+                else return $"-{Discount}%";
             }
         }
         public string GetDescription
@@ -38,7 +48,36 @@ namespace WpfAppZADANIE.Comp
                 else return $"Название:{Title}\nОписание: Отсутствует";
             }
         }
-        
-        
+        public string GetAverageFeedback
+        {
+            get
+            {
+                double avg = 0;
+                if (Feedback.Count() == 0)
+                {
+                    return "Оценок нет";
+                }
+                else
+                {
+                    foreach (var item in Feedback)
+                        avg += item.Evaluation;
+
+                    return $"{avg / Feedback.Count():f1}";
+                }
+            }
+        }
+        public string GetReviewesAmount
+        {
+            get
+            {
+                if (Feedback.Count() == 0)
+                    return "Отзывов нет";
+                else
+                    return $"{Feedback.Count()} отзыв(ов)";
+            }
+        }
+
+
+
     }
 }

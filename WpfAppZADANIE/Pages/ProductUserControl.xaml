@@ -38,7 +38,7 @@
             <TextBlock Grid.Column="1" Grid.Row="5" Name="CountReviewTB" HorizontalAlignment="Left" Margin="10,0,0,0"></TextBlock>
 
             <TextBlock Grid.Column="0" Grid.Row="6" Name="ProductPriceTB"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="6" Name="OldProductPriceTB"></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="6" Name="OldProductPriceTB" TextDecorations="Strikethrough"></TextBlock>
 
             <Button Grid.Column="0" Grid.Row="7" Name="BasketBTN" Background="Red">
                 <Image  Source="\Resource\BK.png" Height="50" Width="30"></Image>

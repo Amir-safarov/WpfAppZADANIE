@@ -24,11 +24,12 @@ namespace WpfAppZADANIE.Pages
         public ProductUserControl(Product product)
         {
             InitializeComponent();
-            SaleTB.Text = product.Discount.ToString()+ " %";
             ProductDescriptionTB.Text = product.GetDescription;
-            ReviewTB.Text = "1";
             ProductPriceTB.Text = product.GetRelevancePrice;
             OldProductPriceTB.Text = product.GetOldPrice;
+            SaleTB.Text = product.GetSale;
+            ReviewTB.Text = product.GetAverageFeedback;
+            CountReviewTB.Text = product.GetReviewesAmount;
         }
     }
 }
