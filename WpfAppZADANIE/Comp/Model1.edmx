@@ -37,7 +37,9 @@
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK_Feedback_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -96,7 +98,9 @@
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Feedback_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -107,7 +111,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="HardwareShop_SAFEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="HardwareShop_SAFEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Feedback" EntityType="Self.Feedback" />
           <EntitySet Name="Product" EntityType="Self.Product" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
@@ -121,7 +125,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище HardwareShop_SAFModelContainer" CdmEntityContainer="HardwareShop_SAFEntities2">
+        <EntityContainerMapping StorageEntityContainer="Хранилище HardwareShop_SAFModelContainer" CdmEntityContainer="HardwareShop_SAFEntities3">
           <EntitySetMapping Name="Feedback">
             <EntityTypeMapping TypeName="HardwareShop_SAFModel.Feedback">
               <MappingFragment StoreEntitySet="Feedback">

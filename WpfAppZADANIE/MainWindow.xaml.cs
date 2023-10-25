@@ -25,7 +25,19 @@ namespace WpfAppZADANIE
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new ProductListPage());
+            ModernNavigationSystem.mainWindow = this;
+            ModernNavigationSystem.NextPage(new PageComponent("Список товаров", new ProductListPage()));
+        }
+
+        private void BackBTN_Click(object sender, RoutedEventArgs e)
+        {
+            ModernNavigationSystem.BackPage();
+        }
+
+        private void CrashBTN_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("АПХХАПХАХПХА, ЭТО ФАЛЬШИВКА. АХАХПХАХПАХ, ПОПАЛСЯ(АСЬ)");
+            MessageBox.Show("ЕСЛИ ЭТО ЧИТАЕТ ОКСАНА НИКОЛАЕВНА, ТО Я ИЗВИНЯЮСЬ.");
         }
     }
 }

@@ -1,0 +1,51 @@
+﻿<Page x:Class="WpfAppZADANIE.Pages.ProductEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfAppZADANIE.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="ProductEditPage">
+
+    <Grid Background="#AEF100">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Border BorderThickness="1" BorderBrush="Gray" Width="175" Height="175">
+                <Image Name="MainImage" Source="{Binding MainImage}" Margin="5" ></Image>
+            </Border>
+            <Button x:Name="SelectImageButton" Width="210" Click="SelectImageButton_Click">Тыкни в меня</Button>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                <TextBlock>Идентификатор</TextBlock>
+                <TextBox IsReadOnly="True" x:Name="IDBox" Text="{Binding ID}"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                <TextBlock>Название</TextBlock>
+                <TextBox x:Name="TitleBox" Text="{Binding Title}" TextWrapping="NoWrap"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                <TextBlock>Описание</TextBlock>
+                <TextBox x:Name="DescriptionBox" Text="{Binding Description}" TextWrapping="Wrap" Height="100"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                <TextBlock>Стоимость</TextBlock>
+                <TextBox x:Name="CostBox" Text="{Binding Cost}" ></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                <TextBlock>Скидка</TextBlock>
+                <TextBox x:Name="DiscountBox" Text="{Binding Discount}" PreviewTextInput="OnlyDigits_PreviewTextInput" ></TextBox>
+            </StackPanel>
+            <Button x:Name="SaveButton" Width="200" Click="SaveButton_Click">Ударь меня</Button>
+        </StackPanel>
+    </Grid>
+</Page>

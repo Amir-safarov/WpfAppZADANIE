@@ -13,7 +13,7 @@
             <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical"  Grid.Column="1">
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Vertical"  Grid.Column="1">
             <StackPanel Orientation="Vertical" Margin="0,0,0,10">
                 <TextBlock HorizontalAlignment="Center">По цене</TextBlock>
                 <ComboBox Name="PriceSortCB" SelectionChanged="PriceSortCB_SelectionChanged" >
@@ -38,6 +38,7 @@
                 <TextBox Name ="SearchTextBox" Height="50" Width="90" TextChanged="SearchTextBox_TextChanged" ></TextBox>
                 <TextBlock x:Name="CountDataText"></TextBlock>
             </StackPanel>
+            <Button x:Name="AddBt" Content="Добавить" Click="AddBt_Click"></Button>
         </StackPanel>
         <Border BorderBrush="#FF04a0ff" BorderThickness="3" >
             <ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Column="0">

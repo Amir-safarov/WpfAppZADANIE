@@ -83,5 +83,10 @@ namespace WpfAppZADANIE.Pages
         {
             Refresh();
         }
+
+        private void AddBt_Click(object sender, RoutedEventArgs e)
+        {
+            ModernNavigationSystem.NextPage(new PageComponent("Добавление товара", new ProductEditPage(new Product())));
+        }
     }
 }

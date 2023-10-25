@@ -9,10 +9,10 @@ namespace WpfAppZADANIE.Comp
 {
     internal class ModernNavigationSystem
     {
-        private static List<PageCmponent> list = new List<PageCmponent>();
+        private static List<PageComponent> list = new List<PageComponent>();
         public static MainWindow mainWindow;
         
-        public static void NextPage(PageCmponent page)
+        public static void NextPage(PageComponent page)
         {
             list.Add(page);
             Update(page);
@@ -26,18 +26,25 @@ namespace WpfAppZADANIE.Comp
             }
         }
 
-        private static void Update(PageCmponent page)
+        private static void Update(PageComponent page)
         {
             mainWindow.Title = page.PageTitle;
             
+            mainWindow.BackBTN.Visibility = list.Count()>1 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+            mainWindow.MainFrame.Navigate(page.PagesLink);
+        }
+
+        public static void ClearStoryList()
+        {
+            list.Clear();
         }
     }
 }
-internal class PageCmponent
+internal class PageComponent
 {
     public string PageTitle { get; set; }
     public Page PagesLink { get; set; }
-    public PageCmponent(string pageTitle, Page pagesLink)
+    public PageComponent(string pageTitle, Page pagesLink)
     {
         PageTitle = pageTitle;
         PagesLink = pagesLink;
