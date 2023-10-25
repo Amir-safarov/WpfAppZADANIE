@@ -12,10 +12,11 @@
             <ColumnDefinition Width="43*"/>
             <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
+
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical"  Grid.Column="1">
             <StackPanel Orientation="Vertical" Margin="0,0,0,10">
                 <TextBlock HorizontalAlignment="Center">По цене</TextBlock>
-                <ComboBox Name="SortCB" >
+                <ComboBox Name="PriceSortCB" SelectionChanged="PriceSortCB_SelectionChanged" >
                     <ComboBoxItem>По умолчанию</ComboBoxItem>
                     <ComboBoxItem>По возростанию</ComboBoxItem>
                     <ComboBoxItem>По убыванию</ComboBoxItem>
@@ -23,7 +24,7 @@
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="0,0,0,10">
                 <TextBlock HorizontalAlignment="Center">По скидке</TextBlock>
-                <ComboBox Name="DiscountSortCB" >
+                <ComboBox Name="DiscountSortCB" SelectionChanged="DiscountSortCB_SelectionChanged" >
                     <ComboBoxItem>По умолчанию</ComboBoxItem>
                     <ComboBoxItem>До 5%</ComboBoxItem>
                     <ComboBoxItem>5%-15%</ComboBoxItem>
@@ -34,17 +35,14 @@
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="0,0,0,10">
                 <TextBlock HorizontalAlignment="Center">Поиск</TextBlock>
-                <TextBox Name ="SearchTextBox" Height="50" Width="90" ></TextBox>
+                <TextBox Name ="SearchTextBox" Height="50" Width="90" TextChanged="SearchTextBox_TextChanged" ></TextBox>
+                <TextBlock x:Name="CountDataText"></TextBlock>
             </StackPanel>
         </StackPanel>
-        <Border BorderBrush="#FF04a0ff" BorderThickness="3"  Grid.Column="0">
+        <Border BorderBrush="#FF04a0ff" BorderThickness="3" >
             <ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Column="0">
                 <WrapPanel Name ="ProductWrap"></WrapPanel>
             </ScrollViewer>
         </Border>
-        <StackPanel Orientation="Vertical" Margin="5,0,5,0">
-            <Button x:Name="AddBt" Content="Добавить" ></Button>
-            <TextBlock x:Name="CountDataText"></TextBlock>
-        </StackPanel>
     </Grid>
 </Page>

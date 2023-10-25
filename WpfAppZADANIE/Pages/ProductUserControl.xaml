@@ -14,40 +14,40 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="61*"/>
+                <RowDefinition Height="61*"/>
+                <RowDefinition Height="61*"/>
+                <RowDefinition Height="46*"/>
+                <RowDefinition Height="76*"/>
+                <RowDefinition Height="61*"/>
+                <RowDefinition Height="61*"/>
+                <RowDefinition Height="61*"/>
             </Grid.RowDefinitions>
 
-            <Image Name ="IconIMG" Grid.ColumnSpan="2" Grid.RowSpan="4" Source="\Resource\analys.png"></Image>
-            <StackPanel Grid.Row="3" Grid.Column="3" Orientation="Vertical" VerticalAlignment="Center">
+            <Image Name ="IconIMG" Grid.ColumnSpan="3" Grid.RowSpan="4" Source="\Resource\analys.png" Margin="0,0,129,0"></Image>
+            <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center" Height="26" Margin="5,0,5,0">
                 <TextBlock x:Name ="SaleTB" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Aquamarine"/>
             </StackPanel>
 
-            <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan ="3" Name="ProductDescriptionTB" HorizontalAlignment="Center" ></TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Name="ProductDescriptionTB" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Top">NAME</TextBlock>
 
-            <StackPanel Grid.Column="0" Grid.Row="5" Orientation="Horizontal">
+            <StackPanel Grid.Column="0" Grid.Row="5" Orientation="Horizontal" Margin="5,0,5,0">
                 <Image Source="\Resource\zv.png" Height="50" Width="30" Margin="10"></Image>
                 <TextBlock Name="ReviewTB" HorizontalAlignment="Left" Margin="10,0,0,0"></TextBlock>
             </StackPanel>
-            <TextBlock Grid.Column="1" Grid.Row="5" Name="CountReviewTB" HorizontalAlignment="Left" Margin="10,0,0,0"></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="5" Name="CountReviewTB" HorizontalAlignment="Left" Margin="10,0,0,0" Height="25" Width="0"></TextBlock>
 
-            <TextBlock Grid.Column="0" Grid.Row="6" Name="ProductPriceTB"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="6" Name="OldProductPriceTB" TextDecorations="Strikethrough"></TextBlock>
+            <TextBlock Grid.Row="6" Name="ProductPriceTB" Height="25" Width="0"/>
+            <TextBlock Grid.Column="1" Grid.Row="6" Name="OldProductPriceTB" TextDecorations="Strikethrough" Height="25" Width="0"></TextBlock>
 
-            <Button Grid.Column="0" Grid.Row="7" Name="BasketBTN" Background="Red">
-                <Image  Source="\Resource\BK.png" Height="50" Width="30"></Image>
+            <Button Grid.Column="0"  Grid.Row="6" Grid.RowSpan="2" Name="DelBTN" Background="Red" Margin="5,5,5,5">
+                <Image  Source="\Resource\BK.png" Height="100" Width="100"></Image>
             </Button>
-            <Button Grid.Column="1" Grid.Row="7" Name="HeartBTN">
-                <Image  Source="\Resource\Heart.png" Height="50" Width="30"></Image>
+            <Button Grid.Column="1"  Grid.Row="6" Grid.RowSpan="2" Name="EditBTN" Margin="5,5,5,5">
+                <Image  Source="\Resource\Heart.png" Height="100" Width="100"></Image>
             </Button>
-            <Button Grid.Column="2" Grid.Row="7" Name="AnalysBTN">
-                <Image  Source="\Resource\analys.png" Height="50" Width="30"></Image>
+            <Button Grid.Column="2" Grid.Row="6" Grid.RowSpan="2" Name="AnalysBTN" Margin="5,5,5,5">
+                <Image  Source="\Resource\analys.png" Height="100" Width="100"></Image>
             </Button>
         </Grid>
     </Border>
