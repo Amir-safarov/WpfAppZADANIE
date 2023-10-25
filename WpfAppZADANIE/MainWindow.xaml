@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppZADANIE"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="835">
+        Title="Контора" Height="450" Width="835">
     <Grid>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.ColumnSpan="2" Fill="#FFE6FBBF"></Rectangle>
+        <Rectangle Grid.RowSpan="2" Fill="#FFE6FBBF"></Rectangle>
+
+        <Image Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Margin="5" Source="\Resource\cat.png"></Image>
+        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Bottom" Margin="10">
+            <Button x:Name="BackBTN" >Back</Button>
+            <Button x:Name="CrashBTN" >Crash</Button>
+        </StackPanel>
+
+        <TextBlock x:Name="TitleTb" Grid.Column="1">Контора "Эль - Доллара"</TextBlock>
+
+        <Frame x:Name="MainFrame" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>
