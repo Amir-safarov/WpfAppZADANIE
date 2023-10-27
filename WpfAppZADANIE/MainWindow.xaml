@@ -15,8 +15,8 @@
             <RowDefinition/>
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
-        <Rectangle Grid.ColumnSpan="2" Fill="#AEF100"></Rectangle>
-        <Rectangle Grid.RowSpan="2" Fill="#AEF100"></Rectangle>
+        <Rectangle Grid.ColumnSpan="2" Fill="#1E796A"></Rectangle>
+        <Rectangle Grid.RowSpan="2" Fill="#1E796A"></Rectangle>
 
         <Image Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Margin="5" Source="\Resource\cat.png"></Image>
         <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Bottom" Margin="10">

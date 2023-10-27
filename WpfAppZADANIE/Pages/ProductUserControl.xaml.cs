@@ -35,6 +35,14 @@ namespace WpfAppZADANIE.Pages
             SaleTB.Text = product.GetSale;
             ReviewTB.Text = product.GetAverageFeedback;
             CountReviewTB.Text = product.GetReviewesAmount;
+            if (App.isAdmin)
+            return;
+            else
+            {
+                DelBTN.Visibility = Visibility.Hidden;
+                EditBTN.Visibility = Visibility.Hidden;
+                AnalysBTN.Visibility = Visibility.Hidden;
+            }
         }
         private BitmapImage GetimageSources(byte[] byteImage)
         {
