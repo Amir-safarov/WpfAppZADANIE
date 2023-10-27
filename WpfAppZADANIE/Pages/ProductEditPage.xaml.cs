@@ -47,12 +47,14 @@ namespace WpfAppZADANIE.Pages
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            StringBuilder error = new StringBuilder();           
+            StringBuilder error = new StringBuilder();
             if (error.Length > 0)
             {
                 MessageBox.Show(error.ToString());
                 return;
             }
+            if(product.Id == 0)
+                App.DDBB.Product.Add(product);
             App.DDBB.SaveChanges();
             ModernNavigationSystem.BackPage();
         }

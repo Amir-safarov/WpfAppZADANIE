@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfAppZADANIE.Pages;
 using WpfAppZADANIE.Comp;
+using System.IO;
 
 namespace WpfAppZADANIE
 {
@@ -27,6 +28,12 @@ namespace WpfAppZADANIE
             InitializeComponent();
             ModernNavigationSystem.mainWindow = this;
             ModernNavigationSystem.NextPage(new PageComponent("Список товаров", new ProductListPage()));
+
+            /*foreach (var item in App.DDBB.Product.ToArray())
+            {
+                item.MainImage = File.ReadAllBytes(item.ImagePath);
+            }
+            App.DDBB.SaveChanges();*/
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)

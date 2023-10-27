@@ -13,10 +13,10 @@ namespace WpfAppZADANIE.Comp
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HardwareShop_SAFEntities3 : DbContext
+    public partial class HardwareShop_SAFEntities4 : DbContext
     {
-        public HardwareShop_SAFEntities3()
-            : base("name=HardwareShop_SAFEntities3")
+        public HardwareShop_SAFEntities4()
+            : base("name=HardwareShop_SAFEntities4")
         {
         }
     

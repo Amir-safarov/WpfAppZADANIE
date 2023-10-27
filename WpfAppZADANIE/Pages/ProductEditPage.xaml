@@ -27,7 +27,7 @@
         <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
                 <TextBlock>Идентификатор</TextBlock>
-                <TextBox IsReadOnly="True" x:Name="IDBox" Text="{Binding ID}"></TextBox>
+                <TextBox IsReadOnly="True" x:Name="IDBox" Text="{Binding Id}"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
                 <TextBlock>Название</TextBlock>
