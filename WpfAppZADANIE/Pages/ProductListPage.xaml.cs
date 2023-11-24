@@ -88,5 +88,7 @@ namespace WpfAppZADANIE.Pages
         {
             ModernNavigationSystem.NextPage(new PageComponent("Добавление товара", new ProductEditPage(new Product())));
         }
+
+        
     }
 }

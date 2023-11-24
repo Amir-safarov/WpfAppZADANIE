@@ -4,11 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ddc0d6b8be3c418996b276a1f098b940" Name="Diagram1">
-        <EntityTypeShape EntityType="HardwareShop_SAFModel.Feedback" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="HardwareShop_SAFModel.Product" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="HardwareShop_SAFModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+      <Diagram DiagramId="0907f4420a2e4f04816e47df8a98df65" Name="Diagram1">
+        <EntityTypeShape EntityType="HardwareShop_SAFModel.Feedback" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HardwareShop_SAFModel.Order" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HardwareShop_SAFModel.Prod_Ord" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HardwareShop_SAFModel.Product" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HardwareShop_SAFModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
         <AssociationConnector Association="HardwareShop_SAFModel.FK_Feedback_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="HardwareShop_SAFModel.FK_Prod_Ord_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="HardwareShop_SAFModel.FK_Prod_Ord_Product" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

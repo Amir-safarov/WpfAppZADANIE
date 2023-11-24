@@ -43,8 +43,7 @@ namespace WpfAppZADANIE
 
         private void CrashBTN_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("АПХХАПХАХПХА, ЭТО ФАЛЬШИВКА. АХАХПХАХПАХ, ПОПАЛСЯ(АСЬ)");
-            MessageBox.Show("ЕСЛИ ЭТО ЧИТАЕТ ОКСАНА НИКОЛАЕВНА, ТО Я ИЗВИНЯЮСЬ.");
+            ModernNavigationSystem.BackAuth();
         }
     }
 }

@@ -12,25 +12,18 @@ namespace WpfAppZADANIE.Comp
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public Order()
         {
-            this.Feedback = new HashSet<Feedback>();
             this.Prod_Ord = new HashSet<Prod_Ord>();
         }
     
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public decimal Cost { get; set; }
-        public Nullable<double> Discount { get; set; }
-        public byte[] MainImage { get; set; }
-        public string ImagePath { get; set; }
+        public int ID { get; set; }
+        public Nullable<System.DateTime> OrdDate { get; set; }
+        public bool Enable { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Feedback> Feedback { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Prod_Ord> Prod_Ord { get; set; }
     }

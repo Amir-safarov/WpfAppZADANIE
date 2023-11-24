@@ -36,12 +36,11 @@ namespace WpfAppZADANIE.Pages
             ReviewTB.Text = product.GetAverageFeedback;
             CountReviewTB.Text = product.GetReviewesAmount;
             if (App.isAdmin)
-            return;
+                BasketBTN.Visibility = Visibility.Collapsed;
             else
             {
                 DelBTN.Visibility = Visibility.Hidden;
                 EditBTN.Visibility = Visibility.Hidden;
-                AnalysBTN.Visibility = Visibility.Hidden;
             }
         }
         private BitmapImage GetimageSources(byte[] byteImage)
@@ -69,6 +68,11 @@ namespace WpfAppZADANIE.Pages
             App.DDBB.Product.Remove(product);
             App.DDBB.SaveChanges();
             ModernNavigationSystem.NextPage(new PageComponent("Список услуг", new ProductListPage()));
+        }
+
+        private void BasketBTN_Click(object sender, RoutedEventArgs e)
+        {
+            ModernNavigationSystem.NextPage(new PageComponent("Корзина", new Basket()));
         }
     }
 }

@@ -14,7 +14,7 @@ namespace WpfAppZADANIE
     /// </summary>
     public partial class App : Application
     {
-        public static HardwareShop_SAFEntities4  DDBB = new HardwareShop_SAFEntities4();
+        public static HardwareShop_SAFEntities6 DDBB = new HardwareShop_SAFEntities6();
         public static bool isAdmin = false;
     }
 }

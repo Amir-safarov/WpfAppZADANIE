@@ -28,10 +28,16 @@ namespace WpfAppZADANIE.Pages
 
         private void EnterBTS_Click(object sender, RoutedEventArgs e)
         {
-            if (PasswordTB.Text == "000")
+            if (PasswordTB.Text == "")
+            {
                 App.isAdmin = true;
-
+                MessageBox.Show("Admin");
+            }
+            else
+                MessageBox.Show("Uselles user");
             ModernNavigationSystem.NextPage(new PageComponent("Список услуг", new ProductListPage()));
         }
+
+        
     }
 }

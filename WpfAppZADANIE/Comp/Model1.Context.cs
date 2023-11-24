@@ -13,10 +13,10 @@ namespace WpfAppZADANIE.Comp
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HardwareShop_SAFEntities4 : DbContext
+    public partial class HardwareShop_SAFEntities6 : DbContext
     {
-        public HardwareShop_SAFEntities4()
-            : base("name=HardwareShop_SAFEntities4")
+        public HardwareShop_SAFEntities6()
+            : base("name=HardwareShop_SAFEntities6")
         {
         }
     
@@ -26,6 +26,8 @@ namespace WpfAppZADANIE.Comp
         }
     
         public virtual DbSet<Feedback> Feedback { get; set; }
+        public virtual DbSet<Order> Order { get; set; }
+        public virtual DbSet<Prod_Ord> Prod_Ord { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }

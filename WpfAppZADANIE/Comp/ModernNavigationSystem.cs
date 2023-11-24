@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using WpfAppZADANIE.Pages;
 
 namespace WpfAppZADANIE.Comp
 {
@@ -33,7 +35,12 @@ namespace WpfAppZADANIE.Comp
             mainWindow.BackBTN.Visibility = list.Count()>1 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
             mainWindow.MainFrame.Navigate(page.PagesLink);
         }
-
+        public static void BackAuth()
+        {
+            MessageBox.Show("Ваша роль обнулена.");
+            App.isAdmin = false;
+            NextPage(new PageComponent("Авторизация", new LOG()));
+        }
         public static void ClearStoryList()
         {
             list.Clear();
