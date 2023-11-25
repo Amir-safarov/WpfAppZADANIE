@@ -72,7 +72,37 @@ namespace WpfAppZADANIE.Pages
 
         private void BasketBTN_Click(object sender, RoutedEventArgs e)
         {
-            ModernNavigationSystem.NextPage(new PageComponent("Корзина", new Basket()));
+            try
+            {
+                Order order = App.DDBB.Order.OrderByDescending(x => x.ID).FirstOrDefault();
+                if(order == null || order.Enable == false)
+                {
+                    App.DDBB.Order.Add(new Order()
+                    {
+                        OrdDate = DateTime.UtcNow,
+                        Enable = true
+                    });
+                    App.DDBB.Prod_Ord.Add(new Prod_Ord()
+                    {
+                        ID_prod = product.Id,
+                        Prod_count = 1
+                    });
+                }
+                else if (order.Enable == true)
+                {
+                    App.DDBB.Prod_Ord.Add(new Prod_Ord()
+                    {
+                        ID_prod = product.Id,
+                        Prod_count = 1
+                    });
+                }
+                App.DDBB.SaveChanges();
+                MessageBox.Show("Товар в корзине");
+            }
+            catch
+            {
+                MessageBox.Show("При попытке добавления товара в коризну что-то пошло н");
+            }
         }
     }
 }

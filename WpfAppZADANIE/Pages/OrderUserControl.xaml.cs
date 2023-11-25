@@ -21,16 +21,24 @@ namespace WpfAppZADANIE.Pages
     /// <summary>
     /// Логика взаимодействия для OrderUserControl.xaml
     /// </summary>
-    public partial class OrderUserControl : UserControl
+    public partial class OrderUserControl : UserControl 
     {
-        private Order _order;
-        public OrderUserControl(Order order)
+        private Prod_Ord _order;
+        private int _prodCount;
+        public OrderUserControl(Prod_Ord order)
         {
             InitializeComponent();
             _order = order;
             DataContext = order;
-            IconIMG.Source = GetimageSources(product.MainImage);
+            //CountText.Text = product_order.Count.ToString();
+            RefreshCost();
         }
+
+        private void RefreshCost()
+        {
+            throw new NotImplementedException();
+        }
+
         private BitmapImage GetimageSources(byte[] byteImage)
         {
             if (byteImage != null)

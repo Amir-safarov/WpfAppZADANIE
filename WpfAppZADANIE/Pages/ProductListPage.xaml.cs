@@ -89,6 +89,9 @@ namespace WpfAppZADANIE.Pages
             ModernNavigationSystem.NextPage(new PageComponent("Добавление товара", new ProductEditPage(new Product())));
         }
 
-        
+        private void BasketBTN_Click(object sender, RoutedEventArgs e)
+        {
+            ModernNavigationSystem.NextPage(new PageComponent("Корзина", new Basket()));
+        }
     }
 }

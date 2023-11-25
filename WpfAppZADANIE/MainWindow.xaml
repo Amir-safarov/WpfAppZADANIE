@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppZADANIE"
         mc:Ignorable="d"
-        Title="Контора" Height="450" Width="835">
+        Title="Контора" Height="700" Width="1250" MinHeight="700" MinWidth="1250" MaxHeight="700" MaxWidth="1250">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>

@@ -14,7 +14,7 @@
             <RowDefinition Height="193*"/>
         </Grid.RowDefinitions>
         <DockPanel>
-            <TextBlock Name="BasketCount" HorizontalAlignment="Left">Цена</TextBlock>
+            <TextBlock Name="BasketCount" HorizontalAlignment="Left">Цена корзины:</TextBlock>
             <Button x:Name="BuyBTN" HorizontalAlignment="Right">Отдать свои шекели</Button>
         </DockPanel>
         <Border BorderBrush="#FF04a0ff" BorderThickness="3" Grid.Row="1" >

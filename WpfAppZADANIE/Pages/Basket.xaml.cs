@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAppZADANIE.Comp;
 
 namespace WpfAppZADANIE.Pages
 {
@@ -23,6 +24,16 @@ namespace WpfAppZADANIE.Pages
         public Basket()
         {
             InitializeComponent();
+            Refresh();
+        }
+
+        private void Refresh()
+        {
+            Order lastOrder = App.DDBB.Order.OrderByDescending(x => x.ID).FirstOrDefault();
+            IEnumerable<Prod_Ord> orderslist = App.DDBB.Prod_Ord.Where(x => x.ID_ord == lastOrder.ID & lastOrder.Enable == true);
+
+            foreach (var order in orderslist)
+                OrderWrap.Children.Add(new OrderUserControl(order));
         }
     }
 }
