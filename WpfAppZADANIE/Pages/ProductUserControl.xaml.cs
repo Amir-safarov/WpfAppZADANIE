@@ -85,6 +85,7 @@ namespace WpfAppZADANIE.Pages
                     App.DDBB.Prod_Ord.Add(new Prod_Ord()
                     {
                         ID_prod = product.Id,
+                        ID_ord = order.ID,
                         Prod_count = 1
                     });
                 }
@@ -93,11 +94,12 @@ namespace WpfAppZADANIE.Pages
                     App.DDBB.Prod_Ord.Add(new Prod_Ord()
                     {
                         ID_prod = product.Id,
+                        ID_ord = order.ID,
                         Prod_count = 1
                     });
                 }
                 App.DDBB.SaveChanges();
-                MessageBox.Show("Товар в корзине");
+                MessageBox.Show($"Товар {product.Title} в корзине");
             }
             catch
             {

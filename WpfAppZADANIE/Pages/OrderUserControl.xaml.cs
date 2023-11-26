@@ -29,14 +29,14 @@ namespace WpfAppZADANIE.Pages
         {
             InitializeComponent();
             _order = order;
-            DataContext = order;
-            //CountText.Text = product_order.Count.ToString();
-            RefreshCost();
+            DataContext = _order;
+            ShowCount.Text = _order.Prod_count.ToString();
+
+           //RefreshCost();
         }
 
         private void RefreshCost()
         {
-            throw new NotImplementedException();
         }
 
         private BitmapImage GetimageSources(byte[] byteImage)
