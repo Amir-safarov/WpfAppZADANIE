@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfAppZADANIE.Pages"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="700">
-    <Border BorderBrush="#FF04a0ff" BorderThickness="3" Grid.ColumnSpan="2" Grid.RowSpan="2">
+             d:DesignHeight="350" d:DesignWidth="450" MaxHeight="450" >
+    <Border BorderBrush="#FFE78E17" BorderThickness="3" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="2">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="171*"/>
@@ -17,9 +17,9 @@
                 <RowDefinition Height="53*"/>
                 <RowDefinition Height="79*"/>
             </Grid.RowDefinitions>
-            <Image x:Name="IconIMG" Grid.Row="0" Source="{Binding Path = Product.ImagePath}" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Margin="50,5,0,0"/>
-            <TextBlock x:Name="ShowTitle" Grid.Row="1" Text="{Binding Path = Product.Title}"></TextBlock>
-            <TextBlock x:Name="ShowPrice" Grid.Row="2" Text="{Binding Path = Product.Cost}"></TextBlock>
+            <Image x:Name="IconIMG" Grid.Row="0" Source="{Binding Path = Product.MainImage}" Height="180" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,5,0,0"/>
+            <TextBlock x:Name="ShowTitle" Grid.Row="1"  Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="10,0,0,0" Text="{Binding Path = Product.Title}"></TextBlock>
+            <TextBlock x:Name="ShowPrice" Grid.Row="2"  HorizontalAlignment="Left" Margin="10,0,0,0" Text="{Binding Path = Product.Cost}"></TextBlock>
             <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="1" Margin="0,52,0,0" Grid.RowSpan="2" >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button HorizontalAlignment="Left" Name="MinusCount" Width="30">-</Button>

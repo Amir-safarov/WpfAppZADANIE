@@ -21,6 +21,7 @@ namespace WpfAppZADANIE.Pages
     /// </summary>
     public partial class Basket : Page
     {
+        private int _basketCost;
         public Basket()
         {
             InitializeComponent();
@@ -33,7 +34,26 @@ namespace WpfAppZADANIE.Pages
             IEnumerable<Prod_Ord> orderslist = App.DDBB.Prod_Ord.Where(x => x.ID_ord == lastOrder.ID & lastOrder.Enable == true);
 
             foreach (var order in orderslist)
+            {
                 OrderWrap.Children.Add(new OrderUserControl(order));
+            }
+        }
+
+        private void BuyBTN_Click(object sender, RoutedEventArgs e)
+        {
+            Order lastOrder = App.DDBB.Order.OrderByDescending(x => x.ID).FirstOrDefault();
+            if (lastOrder.Enable == false)
+            {
+                MessageBox.Show("Корзина пуста. Дырка от бублика. Ничего. НИ-ЧЕ-ГО.");
+                return;
+            }
+            else
+            {
+                lastOrder.Enable = false;
+                App.DDBB.SaveChanges();
+                MessageBox.Show($"Заказ {lastOrder.ID} офорлмен. Он пропал в небытие.");
+                ModernNavigationSystem.BackPage();
+            }
         }
     }
 }

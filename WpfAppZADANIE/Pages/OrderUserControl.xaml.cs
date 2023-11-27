@@ -24,19 +24,21 @@ namespace WpfAppZADANIE.Pages
     public partial class OrderUserControl : UserControl 
     {
         private Prod_Ord _order;
-        private int _prodCount;
+        private int _oneProdCost;
         public OrderUserControl(Prod_Ord order)
         {
             InitializeComponent();
             _order = order;
             DataContext = _order;
             ShowCount.Text = _order.Prod_count.ToString();
-
-           //RefreshCost();
+            PerfectCostShow();
         }
 
-        private void RefreshCost()
+        private void PerfectCostShow()
         {
+            _oneProdCost = (int)_order.Product.Cost;
+            ShowPrice.Text = $"{_oneProdCost:0}₽";
+
         }
 
         private BitmapImage GetimageSources(byte[] byteImage)
