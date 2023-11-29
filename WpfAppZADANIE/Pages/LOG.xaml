@@ -13,6 +13,7 @@
             <TextBlock>Пиши CVC код</TextBlock>
             <TextBox Name="PasswordTB"></TextBox>
             <Button x:Name="EnterBTS" Click="EnterBTS_Click">Войти</Button>
+            <Button x:Name="RegBTN" Click="RegBTN_Click">Регистрито</Button>
         </StackPanel>
     </Grid>
 </Page>

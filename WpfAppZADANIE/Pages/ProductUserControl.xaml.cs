@@ -75,7 +75,21 @@ namespace WpfAppZADANIE.Pages
             try
             {
                 Order order = App.DDBB.Order.OrderByDescending(x => x.ID).FirstOrDefault();
-                if(order == null || order.Enable == false)
+                if (order == null || order.Enable == false)
+                {
+                    App.DDBB.Order.Add(new Order()
+                    {
+                        OrdDate = DateTime.UtcNow,
+                        Enable = true
+                    });
+                    App.DDBB.Prod_Ord.Add(new Prod_Ord()
+                    {
+                        ID_prod = product.Id,
+                        ID_ord = 1,
+                        Prod_count = 1
+                    });
+                }
+                else if (order.Enable == false)
                 {
                     App.DDBB.Order.Add(new Order()
                     {

@@ -38,6 +38,9 @@ namespace WpfAppZADANIE.Pages
             ModernNavigationSystem.NextPage(new PageComponent("Список услуг", new ProductListPage()));
         }
 
-        
+        private void RegBTN_Click(object sender, RoutedEventArgs e)
+        {
+            ModernNavigationSystem.NextPage(new PageComponent("Залупки", new Reg()));
+        }
     }
 }

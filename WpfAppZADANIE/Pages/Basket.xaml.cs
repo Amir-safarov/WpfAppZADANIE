@@ -32,11 +32,13 @@ namespace WpfAppZADANIE.Pages
         {
             Order lastOrder = App.DDBB.Order.OrderByDescending(x => x.ID).FirstOrDefault();
             IEnumerable<Prod_Ord> orderslist = App.DDBB.Prod_Ord.Where(x => x.ID_ord == lastOrder.ID & lastOrder.Enable == true);
-
-            foreach (var order in orderslist)
+            if (lastOrder != null)
             {
-                OrderWrap.Children.Add(new OrderUserControl(order));
+                foreach (var order in orderslist)
+                    OrderWrap.Children.Add(new OrderUserControl(order));
             }
+            else
+                return;
         }
 
         private void BuyBTN_Click(object sender, RoutedEventArgs e)
