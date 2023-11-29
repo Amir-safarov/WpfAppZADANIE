@@ -86,7 +86,7 @@ namespace WpfAppZADANIE.Pages
                     {
                         ID_prod = product.Id,
                         ID_ord = 1,
-                        Prod_count = 1
+                        Prod_count = 2
                     });
                 }
                 else if (order.Enable == false)
@@ -100,7 +100,7 @@ namespace WpfAppZADANIE.Pages
                     {
                         ID_prod = product.Id,
                         ID_ord = order.ID,
-                        Prod_count = 1
+                        Prod_count = 2
                     });
                 }
                 else if (order.Enable == true)
@@ -109,7 +109,7 @@ namespace WpfAppZADANIE.Pages
                     {
                         ID_prod = product.Id,
                         ID_ord = order.ID,
-                        Prod_count = 1
+                        Prod_count = 2
                     });
                 }
                 App.DDBB.SaveChanges();

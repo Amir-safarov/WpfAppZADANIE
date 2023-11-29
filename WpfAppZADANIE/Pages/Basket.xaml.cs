@@ -28,14 +28,19 @@ namespace WpfAppZADANIE.Pages
             Refresh();
         }
 
-        private void Refresh()
+        public void Refresh()
         {
             Order lastOrder = App.DDBB.Order.OrderByDescending(x => x.ID).FirstOrDefault();
             IEnumerable<Prod_Ord> orderslist = App.DDBB.Prod_Ord.Where(x => x.ID_ord == lastOrder.ID & lastOrder.Enable == true);
             if (lastOrder != null)
             {
                 foreach (var order in orderslist)
+                {
+                    _basketCost += (int)(order.Product.Cost * order.Prod_count); 
                     OrderWrap.Children.Add(new OrderUserControl(order));
+                }
+
+                BasketCost.Text = _basketCost.ToString();
             }
             else
                 return;

@@ -15,7 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Serialization;
 using WpfAppZADANIE.Comp;
-
+using WpfAppZADANIE.Pages;
 namespace WpfAppZADANIE.Pages
 {
     /// <summary>
@@ -32,6 +32,8 @@ namespace WpfAppZADANIE.Pages
             DataContext = _order;
             ShowCount.Text = _order.Prod_count.ToString();
             PerfectCostShow();
+            Basket basket = new Basket();
+            basket.Refresh();                                                                                                                                                                                           
         }
 
         private void PerfectCostShow()

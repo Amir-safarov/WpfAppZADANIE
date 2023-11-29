@@ -24,7 +24,7 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button HorizontalAlignment="Left" Name="MinusCount" Width="30">-</Button>
                     <Border BorderBrush="Black" BorderThickness="2" Width="60">
-                        <TextBlock Name="ShowCount" HorizontalAlignment="Center" Text="{Binding Path = Count}"></TextBlock>
+                        <TextBlock Name="ShowCount" HorizontalAlignment="Center" Text="{Binding Path = Prod_count}"></TextBlock>
                     </Border>
                     <Button HorizontalAlignment="Right" Name="PlusCount" Width="30">+</Button>
                 </StackPanel>
