@@ -79,6 +79,7 @@ namespace WpfAppZADANIE.Pages
                 {
                     App.DDBB.Order.Add(new Order()
                     {
+                        ID = 1,
                         OrdDate = DateTime.UtcNow,
                         Enable = true
                     });
@@ -86,7 +87,7 @@ namespace WpfAppZADANIE.Pages
                     {
                         ID_prod = product.Id,
                         ID_ord = 1,
-                        Prod_count = 2
+                        Prod_count = 1
                     });
                 }
                 else if (order.Enable == false)
@@ -100,7 +101,7 @@ namespace WpfAppZADANIE.Pages
                     {
                         ID_prod = product.Id,
                         ID_ord = order.ID,
-                        Prod_count = 2
+                        Prod_count = 1
                     });
                 }
                 else if (order.Enable == true)
@@ -109,7 +110,7 @@ namespace WpfAppZADANIE.Pages
                     {
                         ID_prod = product.Id,
                         ID_ord = order.ID,
-                        Prod_count = 2
+                        Prod_count = 1
                     });
                 }
                 App.DDBB.SaveChanges();
@@ -117,7 +118,7 @@ namespace WpfAppZADANIE.Pages
             }
             catch
             {
-                MessageBox.Show("При попытке добавления товара в коризну что-то пошло н");
+                MessageBox.Show("При попытке добавления товара в коризну что-то пошло не так");
             }
         }
     }

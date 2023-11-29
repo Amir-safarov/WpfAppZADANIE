@@ -22,11 +22,11 @@
             <TextBlock x:Name="ShowPrice" Grid.Row="2"  HorizontalAlignment="Left" Margin="10,0,0,0" Text="{Binding Path = Product.Cost}"></TextBlock>
             <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="1" Margin="0,52,0,0" Grid.RowSpan="2" >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button HorizontalAlignment="Left" Name="MinusCount" Width="30">-</Button>
+                    <Button HorizontalAlignment="Left" Name="MinusCount" Width="30" Click="MinusCount_Click">-</Button>
                     <Border BorderBrush="Black" BorderThickness="2" Width="60">
                         <TextBlock Name="ShowCount" HorizontalAlignment="Center" Text="{Binding Path = Prod_count}"></TextBlock>
                     </Border>
-                    <Button HorizontalAlignment="Right" Name="PlusCount" Width="30">+</Button>
+                    <Button HorizontalAlignment="Right" Name="PlusCount" Width="30" Click="PlusCount_Click">+</Button>
                 </StackPanel>
             </Border>
         </Grid>

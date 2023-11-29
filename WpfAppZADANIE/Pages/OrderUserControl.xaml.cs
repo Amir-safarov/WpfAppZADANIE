@@ -32,15 +32,12 @@ namespace WpfAppZADANIE.Pages
             DataContext = _order;
             ShowCount.Text = _order.Prod_count.ToString();
             PerfectCostShow();
-            Basket basket = new Basket();
-            basket.Refresh();                                                                                                                                                                                           
         }
 
         private void PerfectCostShow()
         {
             _oneProdCost = (int)_order.Product.Cost;
             ShowPrice.Text = $"{_oneProdCost:0}₽";
-
         }
 
         private BitmapImage GetimageSources(byte[] byteImage)
@@ -58,5 +55,26 @@ namespace WpfAppZADANIE.Pages
                 return new BitmapImage(new Uri(@"\Resource\analys.png", UriKind.Relative));
         }
 
+        private void PlusCount_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.Parse(ShowCount.Text) < 99)
+            {
+                _order.Prod_count++;
+                App.DDBB.SaveChanges();
+                ShowCount.Text = (_order.Prod_count).ToString();
+            };
+            PerfectCostShow();
+        }
+
+        private void MinusCount_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.Parse(ShowCount.Text) > 1)
+            {
+                _order.Prod_count--;
+                App.DDBB.SaveChanges();
+                ShowCount.Text = (_order.Prod_count).ToString();
+            }; 
+            PerfectCostShow();
+        }
     }
 }

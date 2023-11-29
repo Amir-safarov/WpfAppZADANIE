@@ -41,13 +41,13 @@
             <TextBlock Grid.Column="1" Grid.Row="6" Name="OldProductPriceTB" TextDecorations="Strikethrough" Height="25"></TextBlock>
 
             <Button Grid.Column="0"  Grid.Row="7" Grid.RowSpan="1" Name="BasketBTN" Background="Red" Margin="5,5,0,5" HorizontalAlignment="Left" Width="143" Click="BasketBTN_Click" >
-                <Image  Source="\Resource\BK.png" Height="50" Width="50"></Image>
+                <Image  Source="\Resource\BK.png" ></Image>
             </Button>
             <Button Grid.Column="1"  Grid.Row="7" Grid.RowSpan="1" Name="EditBTN" Margin="5,5,5,5" Click="EditBTN_Click">
-                <Image  Source="\Resource\Heart.png" Height="45" Width="50"></Image>
+                <Image  Source="\Resource\Heart.png"></Image>
             </Button>
             <Button Grid.Column="2" Grid.Row="7" Grid.RowSpan="1" Name="DelBTN" Margin="5,5,5,5" Click="DelBTN_Click">
-                <Image  Source="\Resource\analys.png" Height="40" Width="50"></Image>
+                <Image  Source="\Resource\analys.png"></Image>
             </Button>
         </Grid>
     </Border>
