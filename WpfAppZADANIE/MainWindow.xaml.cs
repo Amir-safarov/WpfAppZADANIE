@@ -27,7 +27,7 @@ namespace WpfAppZADANIE
         {
             InitializeComponent();
             ModernNavigationSystem.mainWindow = this;
-            ModernNavigationSystem.NextPage(new PageComponent("Список товаров", new LOG()));
+            ModernNavigationSystem.NextPage(new PageComponent("Контора 'Эль - Доллара'", new LOG()));
 
             /*foreach (var item in App.DDBB.Product.ToArray())
             {

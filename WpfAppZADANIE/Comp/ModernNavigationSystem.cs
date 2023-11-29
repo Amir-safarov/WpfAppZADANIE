@@ -31,7 +31,7 @@ namespace WpfAppZADANIE.Comp
         private static void Update(PageComponent page)
         {
             mainWindow.Title = page.PageTitle;
-            
+            mainWindow.TitleTb.Text = page.PageTitle;
             mainWindow.BackBTN.Visibility = list.Count()>1 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
             mainWindow.MainFrame.Navigate(page.PagesLink);
         }

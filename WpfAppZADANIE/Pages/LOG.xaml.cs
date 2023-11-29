@@ -35,12 +35,12 @@ namespace WpfAppZADANIE.Pages
             }
             else
                 MessageBox.Show("Uselles user");
-            ModernNavigationSystem.NextPage(new PageComponent("Список услуг", new ProductListPage()));
+            ModernNavigationSystem.NextPage(new PageComponent("Товары", new ProductListPage()));
         }
 
         private void RegBTN_Click(object sender, RoutedEventArgs e)
         {
-            ModernNavigationSystem.NextPage(new PageComponent("Залупки", new Reg()));
+            ModernNavigationSystem.NextPage(new PageComponent("Регистрация", new Reg()));
         }
     }
 }

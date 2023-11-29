@@ -24,7 +24,7 @@
             <Button x:Name="CrashBTN" Click="CrashBTN_Click" >Crash</Button>
         </StackPanel>
 
-        <TextBlock x:Name="TitleTb" Grid.Column="1" Foreground="#F5001D" FontSize="40">🍌Контора "Эль - Доллара"🍌</TextBlock>
+        <TextBlock x:Name="TitleTb" Grid.Column="1" Foreground="#F5001D" FontSize="40">Контора "Эль - Доллара"</TextBlock>
 
         <Frame x:Name="MainFrame" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
