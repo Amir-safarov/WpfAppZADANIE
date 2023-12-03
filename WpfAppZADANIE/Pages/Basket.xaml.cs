@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using WpfAppZADANIE.Comp;
 
 namespace WpfAppZADANIE.Pages
@@ -22,25 +23,42 @@ namespace WpfAppZADANIE.Pages
     public partial class Basket : Page
     {
         private int _basketCost;
+        private DispatcherTimer timer;
 
         public Basket()
         {
             InitializeComponent();
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(2);
+            timer.Tick += Timer_Tick;
+            Loaded += MainWindow_Loaded;
+            Unloaded += MainWindow_UnLoaded;
             RefreshOrders();
         }
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            RefreshCost();
+            RefreshOrders();
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            timer.Start();
+        }
+        private void MainWindow_UnLoaded(object sender, RoutedEventArgs e)
+        {
+            timer.Stop();
+        }
         private void RefreshOrders()
         {
+            OrderWrap.Children.Clear();
             Order lastOrder = App.DDBB.Order.OrderByDescending(x => x.ID).FirstOrDefault();
             IEnumerable<Prod_Ord> orderslist = App.DDBB.Prod_Ord.Where(x => x.ID_ord == lastOrder.ID & lastOrder.Enable == true);
             if (lastOrder != null)
             {
                 foreach (var order in orderslist)
-                {
-                    _basketCost += (int)(order.Product.Cost * order.Prod_count); 
                     OrderWrap.Children.Add(new OrderUserControl(order));
-                }
-                BasketCost.Text = $"Цена корзины: {_basketCost}";
             }
             else
                 return;
@@ -53,7 +71,12 @@ namespace WpfAppZADANIE.Pages
             if (lastOrder != null)
             {
                 foreach (var order in orderslist)
-                    _basketCost += (int)(order.Product.Cost * order.Prod_count);
+                {
+                    if (order.Product == null)
+                        _basketCost += 0;
+                    else
+                        _basketCost += (int)(order.Product.Cost * order.Prod_count);
+                }
                 BasketCost.Text = $"Цена корзины: {_basketCost}";
             }
             else
@@ -80,6 +103,26 @@ namespace WpfAppZADANIE.Pages
         private void RefreshCostBTN_Click(object sender, RoutedEventArgs e)
         {
             RefreshCost();
+        }
+
+        private void CrashBasketBTN_Click(object sender, RoutedEventArgs e)
+        {
+            int countDeleted = 0;
+            _basketCost = 0;
+            Order lastOrder = App.DDBB.Order.OrderByDescending(x => x.ID).FirstOrDefault();
+            IEnumerable<Prod_Ord> orderslist = App.DDBB.Prod_Ord.Where(x => x.ID_ord == lastOrder.ID & lastOrder.Enable == true);
+            foreach(var order in orderslist)
+            {
+                App.DDBB.Prod_Ord.Remove(order);
+                countDeleted++;
+            }
+            App.DDBB.Order.Remove(lastOrder);
+            RefreshOrders();
+            BasketCost.Text = $"Цена корзины: {_basketCost}";
+            App.DDBB.SaveChanges();
+            ModernNavigationSystem.BackPage();
+            MessageBox.Show($"Корзина очищена. Удалено {countDeleted} товаров.");
+
         }
     }
 }

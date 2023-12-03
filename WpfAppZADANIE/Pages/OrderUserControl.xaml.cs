@@ -21,10 +21,10 @@ namespace WpfAppZADANIE.Pages
     /// <summary>
     /// Логика взаимодействия для OrderUserControl.xaml
     /// </summary>
-    public partial class OrderUserControl : UserControl 
+    public partial class OrderUserControl : UserControl
     {
         private Prod_Ord _order;
-        private int _oneProdCost;
+        private int _oneProdCost = 0;
         public OrderUserControl(Prod_Ord order)
         {
             InitializeComponent();
@@ -36,8 +36,13 @@ namespace WpfAppZADANIE.Pages
 
         private void PerfectCostShow()
         {
-            _oneProdCost = (int)_order.Product.Cost;
-            ShowPrice.Text = $"{_oneProdCost:0}₽";
+            if (_order.Product == null)
+                ShowPrice.Text = $"{_oneProdCost:0}₽";
+            else
+            {
+                _oneProdCost = (int)(_order.Product.Cost * _order.Prod_count);
+                ShowPrice.Text = $"{_oneProdCost:0}₽";
+            }
         }
 
         private BitmapImage GetimageSources(byte[] byteImage)
@@ -73,8 +78,14 @@ namespace WpfAppZADANIE.Pages
                 _order.Prod_count--;
                 App.DDBB.SaveChanges();
                 ShowCount.Text = (_order.Prod_count).ToString();
-            }; 
+            };
             PerfectCostShow();
+        }
+
+        private void DelBTN_Click(object sender, RoutedEventArgs e)
+        {
+            App.DDBB.Prod_Ord.Remove(_order);
+            App.DDBB.SaveChanges();
         }
     }
 }

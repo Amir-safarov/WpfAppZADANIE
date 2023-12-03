@@ -40,7 +40,7 @@
             <TextBlock Grid.Row="6" Name="ProductPriceTB" Height="25" />
             <TextBlock Grid.Column="1" Grid.Row="6" Name="OldProductPriceTB" TextDecorations="Strikethrough" Height="25"></TextBlock>
 
-            <Button Grid.Column="0"  Grid.Row="7" Grid.RowSpan="1" Name="BasketBTN" Background="Red" Margin="5,5,0,5" HorizontalAlignment="Left" Width="143" Click="BasketBTN_Click" >
+            <Button Grid.Column="0"  Grid.Row="7" Grid.RowSpan="1" Name="BasketBTN" Background="Red" Margin="0,5,10,5" Click="BasketBTN_Click" >
                 <Image  Source="\Resource\BK.png" ></Image>
             </Button>
             <Button Grid.Column="1"  Grid.Row="7" Grid.RowSpan="1" Name="EditBTN" Margin="5,5,5,5" Click="EditBTN_Click">

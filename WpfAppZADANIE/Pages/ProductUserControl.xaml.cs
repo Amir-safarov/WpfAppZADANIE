@@ -75,6 +75,7 @@ namespace WpfAppZADANIE.Pages
             try
             {
                 Order order = App.DDBB.Order.OrderByDescending(x => x.ID).FirstOrDefault();
+                bool haveSamePro = App.DDBB.Prod_Ord.Any(x => x.ID_prod == product.Id);
                 if (order == null || order.Enable == false)
                 {
                     App.DDBB.Order.Add(new Order()
