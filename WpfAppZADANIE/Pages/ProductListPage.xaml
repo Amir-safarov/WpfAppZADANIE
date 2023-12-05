@@ -39,7 +39,8 @@
                 <TextBlock x:Name="CountDataText"></TextBlock>
             </StackPanel>
             <Button x:Name="AddBt" Content="Добавить" Click="AddBt_Click"></Button>
-            <Button x:Name="BasketBTN" Content="К корзине" Margin="0,100,0,0" Click="BasketBTN_Click"></Button>
+            <Button x:Name="BasketBTN" Content="К корзине" Margin="0,30,0,0" Click="BasketBTN_Click"></Button>
+            <Button x:Name="OrdersListBTN" Click="OrdersListBTN_Click">Заказы</Button>
         </StackPanel>
         <Border BorderBrush="#FF04a0ff" BorderThickness="3" >
             <ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Column="0">

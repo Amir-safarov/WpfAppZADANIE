@@ -19,6 +19,10 @@ namespace WpfAppZADANIE.Comp
             list.Add(page);
             Update(page);
         }
+        public static void Special(PageComponent page)
+        {
+            Update(page);
+        }
         public static void BackPage()
         {
             if (list.Count > 1)
@@ -32,14 +36,14 @@ namespace WpfAppZADANIE.Comp
         {
             mainWindow.Title = page.PageTitle;
             mainWindow.TitleTb.Text = page.PageTitle;
-            mainWindow.BackBTN.Visibility = list.Count()>1 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
+            mainWindow.BackBTN.Visibility = list.Count()>2 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
             mainWindow.MainFrame.Navigate(page.PagesLink);
         }
         public static void BackAuth()
         {
             MessageBox.Show("Ваша роль обнулена.");
             App.isAdmin = false;
-            NextPage(new PageComponent("Авторизация", new LOG()));
+            Special(new PageComponent("Авторизация", new LOG()));
         }
         public static void ClearStoryList()
         {

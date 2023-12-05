@@ -25,7 +25,19 @@ namespace WpfAppZADANIE.Pages
         {
             InitializeComponent();
             IEnumerable<Product> productList = App.DDBB.Product;
+            if (App.isAdmin)
+            {
+                BasketBTN.Visibility = Visibility.Collapsed;
+                OrdersListBTN.Visibility = Visibility.Visible;
+                AddBt.Visibility = Visibility.Visible;
+            }    
+            else
+            {
+                AddBt.Visibility = Visibility.Collapsed;
+                BasketBTN.Visibility = Visibility.Visible;
+                OrdersListBTN.Visibility = Visibility.Collapsed;
 
+            }
             foreach (var item in productList)
             {
                 ProductWrap.Children.Add(new ProductUserControl(item));
@@ -92,6 +104,11 @@ namespace WpfAppZADANIE.Pages
         private void BasketBTN_Click(object sender, RoutedEventArgs e)
         {
             ModernNavigationSystem.NextPage(new PageComponent("Корзина", new Basket()));
+        }
+
+        private void OrdersListBTN_Click(object sender, RoutedEventArgs e)
+        {
+            ModernNavigationSystem.NextPage(new PageComponent("Заказы", new AdminOrdersList()));
         }
     }
 }
