@@ -40,7 +40,7 @@ namespace WpfAppZADANIE.Pages
                 ShowPrice.Text = $"{_oneProdCost:0}₽";
             else
             {
-                _oneProdCost = (int)(_order.Product.Cost * _order.Prod_count);
+                _oneProdCost = (int)(int.Parse(_order.Product.GetRelevancePriceINT) * _order.Prod_count);
                 ShowPrice.Text = $"{_oneProdCost:0}₽";
             }
         }

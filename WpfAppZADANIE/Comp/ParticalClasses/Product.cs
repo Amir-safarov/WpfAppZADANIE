@@ -19,7 +19,16 @@ namespace WpfAppZADANIE.Comp
                     return $"{Cost:0}P";
             }
         }
-        
+        public string GetRelevancePriceINT
+        {
+            get
+            {
+                if (Discount != 0)
+                    return $"{Cost - (Cost * ((decimal)Discount / 100)):0}";
+                else
+                    return $"{Cost:0}";
+            }
+        }
         public string GetOldPrice
         {
             get

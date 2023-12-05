@@ -75,7 +75,7 @@ namespace WpfAppZADANIE.Pages
                     if (order.Product == null)
                         _basketCost += 0;
                     else
-                        _basketCost += (int)(order.Product.Cost * order.Prod_count);
+                        _basketCost += (int)(int.Parse(order.Product.GetRelevancePriceINT) * order.Prod_count);
                 }
                 BasketCost.Text = $"Цена корзины: {_basketCost}";
             }

@@ -90,6 +90,7 @@ namespace WpfAppZADANIE.Pages
                         ID_ord = 1,
                         Prod_count = 1
                     });
+                    MessageBox.Show($"Товар {product.Title} в корзине");
                 }
                 else if (order.Enable == false)
                 {
@@ -104,8 +105,9 @@ namespace WpfAppZADANIE.Pages
                         ID_ord = order.ID,
                         Prod_count = 1
                     });
+                    MessageBox.Show($"Товар {product.Title} в корзине");
                 }
-                else if (order.Enable == true)
+                if (order.Enable == true & App.DDBB.Prod_Ord.Where(x => x.ID_ord == order.ID && x.ID_prod == product.Id).Count() == 0)
                 {
                     App.DDBB.Prod_Ord.Add(new Prod_Ord()
                     {
@@ -113,9 +115,11 @@ namespace WpfAppZADANIE.Pages
                         ID_ord = order.ID,
                         Prod_count = 1
                     });
+                    MessageBox.Show($"Товар {product.Title} в корзине");
                 }
+                else
+                    MessageBox.Show("Данный товар уже в корзине.");
                 App.DDBB.SaveChanges();
-                MessageBox.Show($"Товар {product.Title} в корзине");
             }
             catch
             {
