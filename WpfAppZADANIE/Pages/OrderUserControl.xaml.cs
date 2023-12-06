@@ -84,8 +84,15 @@ namespace WpfAppZADANIE.Pages
 
         private void DelBTN_Click(object sender, RoutedEventArgs e)
         {
-            App.DDBB.Prod_Ord.Remove(_order);
-            App.DDBB.SaveChanges();
+            try
+            {
+                App.DDBB.Prod_Ord.Remove(_order);
+                App.DDBB.SaveChanges();
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось удалить товар. Повторите попытку.");
+            }    
         }
     }
 }

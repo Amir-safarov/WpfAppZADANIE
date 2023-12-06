@@ -209,7 +209,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="HardwareShop_SAFEntities11" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="HardwareShop_SAFEntities12" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Feedback" EntityType="Self.Feedback" />
           <EntitySet Name="Order" EntityType="Self.Order" />
           <EntitySet Name="Prod_Ord" EntityType="Self.Prod_Ord" />
@@ -233,7 +233,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище HardwareShop_SAFModelContainer" CdmEntityContainer="HardwareShop_SAFEntities11">
+        <EntityContainerMapping StorageEntityContainer="Хранилище HardwareShop_SAFModelContainer" CdmEntityContainer="HardwareShop_SAFEntities12">
           <EntitySetMapping Name="Feedback">
             <EntityTypeMapping TypeName="HardwareShop_SAFModel.Feedback">
               <MappingFragment StoreEntitySet="Feedback">
