@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfAppZADANIE.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="900"
+      d:DesignHeight="450" d:DesignWidth="1000"
       Title="AdminOrdersList">
 
     <Grid>
@@ -21,6 +21,8 @@
                     <ComboBoxItem>Выполненые</ComboBoxItem>
                     <ComboBoxItem>Не выполненые</ComboBoxItem>
                 </ComboBox>
+                <Button Name="ChangeOrderStatus" Click="ChangeOrderStatus_Click">
+                    <TextBlock TextWrapping="Wrap" TextAlignment="Center" >Изменить статус</TextBlock></Button>
             </StackPanel>
             
         </StackPanel>
@@ -29,11 +31,11 @@
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Width="75" DisplayMemberBinding="{Binding Path =  ID}">№</GridViewColumn>
-                        <GridViewColumn Width="150" DisplayMemberBinding="{Binding  Path = OrdDate}">Дата</GridViewColumn>
-                        <GridViewColumn Width="350">
+                        <GridViewColumn Width="250" DisplayMemberBinding="{Binding  Path = OrdDate}">Дата</GridViewColumn>
+                        <GridViewColumn Width="450">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate >
-                                    <ListView Name="SubOrderListView" ItemsSource="{Binding Prod_Ord}">
+                                    <ListView ItemsSource="{Binding Prod_Ord}">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Horizontal">
@@ -46,7 +48,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Width="150" DisplayMemberBinding="{Binding  Path = Enable}">Заказ отображается</GridViewColumn>
+                        <GridViewColumn Width="250" DisplayMemberBinding="{Binding  Path = Enable}">Заказ отображается</GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>
