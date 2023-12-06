@@ -23,8 +23,8 @@ namespace WpfAppZADANIE.Pages
         public AdminOrdersList()
         {
             InitializeComponent();
-            OrderListView.ItemsSource = App.DDBB.Prod_Ord.ToList();
-
+            OrderListView.ItemsSource = App.DDBB.Order.ToList();
+            
         }
 
         private void StatusSortCB_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfAppZADANIE.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="900"
       Title="AdminOrdersList">
 
     <Grid>
@@ -28,11 +28,25 @@
             <ListView Name="OrderListView" >
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Width="75" DisplayMemberBinding="{Binding Path =  Order.ID}">№</GridViewColumn>
-                        <GridViewColumn Width="150" DisplayMemberBinding="{Binding  Path = Order.OrdDate}">Дата</GridViewColumn>
-                        <GridViewColumn Width="150" DisplayMemberBinding ="{Binding Path = Prod_count}">Количество</GridViewColumn>
-                        <GridViewColumn Width="150" DisplayMemberBinding ="{Binding Path = Product.Title}">Количество</GridViewColumn>
-                        <GridViewColumn Width="150" DisplayMemberBinding="{Binding  Path = Order.Enable}">Заказ отображается</GridViewColumn>
+                        <GridViewColumn Width="75" DisplayMemberBinding="{Binding Path =  ID}">№</GridViewColumn>
+                        <GridViewColumn Width="150" DisplayMemberBinding="{Binding  Path = OrdDate}">Дата</GridViewColumn>
+                        <GridViewColumn Width="350">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate >
+                                    <ListView Name="SubOrderListView" ItemsSource="{Binding Prod_Ord}">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding Product.Title}"></TextBlock>
+                                                    <TextBlock Text="{Binding Prod_count}"></TextBlock>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="150" DisplayMemberBinding="{Binding  Path = Enable}">Заказ отображается</GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>

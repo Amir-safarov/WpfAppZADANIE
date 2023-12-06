@@ -25,6 +25,7 @@ namespace WpfAppZADANIE.Comp
         }
         public static void BackPage()
         {
+            
             if (list.Count > 1)
             {
                 list.RemoveAt(list.Count - 1);
